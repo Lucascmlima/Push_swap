@@ -1,23 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_striteri.c                                      :+:      :+:    :+:   */
+/*   is_sorted.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lcarvalh <lcarvalh@student.42.fr>          +#+  +:+       +#+        */
+/*   By: lcarvalh <lcarvalh@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/18 12:48:28 by lcarvalh          #+#    #+#             */
-/*   Updated: 2025/04/18 13:08:42 by lcarvalh         ###   ########.fr       */
+/*   Created: 2025/08/27 10:16:54 by lcarvalh          #+#    #+#             */
+/*   Updated: 2025/09/23 19:56:19 by lcarvalh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_striteri(char *s, void (*f)(unsigned int, char*))
-{
-	unsigned int	i;
+#include "../includes/push_swap.h"
 
-	i = 0;
-	while (s[i])
+int	is_sorted(t_node *a)
+{
+	t_node	*t;
+	
+	t = a;
+	while (t && t->next)
 	{
-		f(i, &s[i]);
-		i++;
+		if (t->value > t->next->value)
+			return (0);
+		t = t->next;
+
 	}
+	return (1);
 }
+

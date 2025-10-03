@@ -6,19 +6,19 @@
 /*   By: lcarvalh <lcarvalh@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/11 10:06:08 by lcarvalh          #+#    #+#             */
-/*   Updated: 2025/08/12 16:12:44 by lcarvalh         ###   ########.fr       */
+/*   Updated: 2025/09/04 13:31:01 by lcarvalh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void	swap(t_stack **stack)
+void	swap(t_node **stack)
 {
-	t_stack	*first;
-	t_stack	*second;
+	t_node	*first;
+	t_node	*second;
 
 	if (!stack || !*stack || !(*stack)->next)
-		return (0);
+		return ;
 	first = *stack;
 	second = (*stack)->next;
 	first->next = second->next;
@@ -26,7 +26,7 @@ void	swap(t_stack **stack)
 	*stack = second;
 }
 
-void	sa(t_stack **stack_a)
+void	sa(t_node **stack_a)
 {
 	if (stack_a && *stack_a && (*stack_a)->next)
 	{
@@ -35,7 +35,7 @@ void	sa(t_stack **stack_a)
 	}
 }
 
-void	sb(t_stack **stack_b)
+void	sb(t_node **stack_b)
 {
 	if (stack_b && *stack_b && (*stack_b)->next)
 	{
@@ -44,7 +44,7 @@ void	sb(t_stack **stack_b)
 	}
 }
 
-void	ss(t_stack **stack_a, t_stack **stack_b)
+void	ss(t_node **stack_a, t_node **stack_b)
 {
 	int	swapped;
 

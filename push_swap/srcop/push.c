@@ -6,25 +6,25 @@
 /*   By: lcarvalh <lcarvalh@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/11 10:18:29 by lcarvalh          #+#    #+#             */
-/*   Updated: 2025/08/12 16:03:12 by lcarvalh         ###   ########.fr       */
+/*   Updated: 2025/09/04 13:30:23 by lcarvalh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void	push(t_stack **src, t_stack **dst)
+void	push(t_node **src, t_node **dst)
 {
-	t_stack	*tmp;
+	t_node	*tmp;
 
 	if (!src || !(*src))
-		return (0);
+		return ;
 	tmp = *src;
 	*src = (*src)->next;
 	tmp->next = *dst;
 	*dst = tmp;
 }
 
-void	pa(t_stack **stack_a, t_stack **stack_b)
+void	pa(t_node **stack_a, t_node **stack_b)
 {
 	if (stack_b && *stack_b)
 	{
@@ -33,7 +33,7 @@ void	pa(t_stack **stack_a, t_stack **stack_b)
 	}
 }
 
-void	pb(t_stack **stack_a, t_stack **stack_b)
+void	pb(t_node **stack_a, t_node **stack_b)
 {
 	if (stack_a && *stack_a)
 	{
@@ -41,10 +41,3 @@ void	pb(t_stack **stack_a, t_stack **stack_b)
 		write(1, "pb\n", 3);
 	}
 }
-
-/*
-inicialmente guarda o primeiro elemento no temp
-depois pula a cabeca para o segundo elemento
-anexa o antigo primeiro elemento que esta solto a cabeca da segunda lista
-diz para lista que agora ele e o primeiro elemento.
-*/

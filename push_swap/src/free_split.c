@@ -1,23 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_striteri.c                                      :+:      :+:    :+:   */
+/*   free_split.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lcarvalh <lcarvalh@student.42.fr>          +#+  +:+       +#+        */
+/*   By: lcarvalh <lcarvalh@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/18 12:48:28 by lcarvalh          #+#    #+#             */
-/*   Updated: 2025/04/18 13:08:42 by lcarvalh         ###   ########.fr       */
+/*   Created: 2025/08/27 10:44:09 by lcarvalh          #+#    #+#             */
+/*   Updated: 2025/09/23 09:02:33 by lcarvalh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_striteri(char *s, void (*f)(unsigned int, char*))
-{
-	unsigned int	i;
+#include "../includes/push_swap.h"
 
+void	free_split(char **split)
+{
+	int	i;
+
+	if (!split)
+		return ;
 	i = 0;
-	while (s[i])
+	while (split[i])
 	{
-		f(i, &s[i]);
+		free(split[i]);
 		i++;
 	}
+	free(split);
 }

@@ -1,0 +1,8 @@
+{
+	"files.associations": {
+		"concepts": "c",
+		"type_traits": "c",
+		"utility": "c",
+		"push_swap.h": "c"
+	}
+}
